@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE rdf:RDF [
-  <!ENTITY a "https://raw.github.com/radiorabe/ontologies/master/owl/rds-pi#">
+  <!ENTITY a "https://raw.github.com/radiorabe/ontologies/master/owl/fm#">
   <!ENTITY owl "http://www.w3.org/2002/07/owl#">
   <!ENTITY ebucore "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#">
-  <!ENTITY fm "https://raw.github.com/radiorabe/ontologies/master/owl/fm#">
   <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
   <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
@@ -16,38 +15,23 @@
 <!-- Ontology Information -->
   <owl:Ontology rdf:about="&a;"
                 owl:versionInfo="1.0">
-    <rdfs:comment xml:lang="en">extends fm extention to ebucore with rds pi data</rdfs:comment>
+    <rdfs:comment xml:lang="en">extends ebucore with FmChannel PublicationChannel</rdfs:comment>
   </owl:Ontology>
 
 <!-- Classes -->
   <owl:Class rdf:about="&a;FmChannel">
     <rdfs:comment>channel being broadcast on UKW frequencies using frequency modulation.</rdfs:comment>
-
-    <owl:equivalentClass>
-      <owl:Class rdf:about="&fm;FmChannel"/>
-    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="&ebucore;PublicationChannel"/>
   </owl:Class>
 
-  <owl:Class rdf:about="&fm;FmChannel"/>
+  <owl:Class rdf:about="&ebucore;PublicationChannel"/>
 
 <!-- Annotation Properties -->
   <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
   <owl:AnnotationProperty rdf:about="&owl;versionInfo"/>
 
 <!-- Object Properties -->
-  <owl:ObjectProperty rdf:about="&a;broadcasterNumber">
-    <rdfs:domain rdf:resource="&a;FmChannel"/>
-  </owl:ObjectProperty>
-
-  <owl:ObjectProperty rdf:about="&a;countrySymbol">
-    <rdfs:domain rdf:resource="&a;FmChannel"/>
-  </owl:ObjectProperty>
-
-  <owl:ObjectProperty rdf:about="&a;#programmeNumber">
-    <rdfs:domain rdf:resource="&a;FmChannel"/>
-  </owl:ObjectProperty>
-
-  <owl:ObjectProperty rdf:about="&a;regionalCode">
+  <owl:ObjectProperty rdf:about="&a;frequency">
     <rdfs:domain rdf:resource="&a;FmChannel"/>
   </owl:ObjectProperty>
 </rdf:RDF>
