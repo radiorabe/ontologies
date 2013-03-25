@@ -43,7 +43,7 @@
     <rdfs:domain rdf:resource="&a;FmChannel"/>
   </owl:ObjectProperty>
 
-  <owl:ObjectProperty rdf:about="&a;#programmeNumber">
+  <owl:ObjectProperty rdf:about="&a;programmeNumber">
     <rdfs:domain rdf:resource="&a;FmChannel"/>
   </owl:ObjectProperty>
 
