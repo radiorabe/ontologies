@@ -15,7 +15,7 @@
 
 <!-- Ontology Information -->
   <owl:Ontology rdf:about="&a;"
-                owl:versionInfo="1.0">
+                owl:versionInfo="0.1.0">
     <rdfs:comment xml:lang="en">extends fm extention to ebucore with rds pi data</rdfs:comment>
   </owl:Ontology>
 
