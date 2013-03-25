@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE rdf:RDF [
-  <!ENTITY a "urn:rabe:rds-pi">
+  <!ENTITY a "https://raw.github.com/radiorabe/ontologies/master/owl/rds-pi">
   <!ENTITY owl "http://www.w3.org/2002/07/owl#">
   <!ENTITY ebucore "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#">
   <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
