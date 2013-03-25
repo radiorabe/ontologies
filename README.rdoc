@@ -1,0 +1,3 @@
+= RaBe Ontologies
+
+Contains helper ontologies for expressing a radio station in a semantic store such as semantic mediawiki.
