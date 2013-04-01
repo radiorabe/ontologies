@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<project name="MyProject" default="dist" basedir=".">
+    <property file="build.properties"/>
+    
+    <target name="init">
+        <mkdir dir="build/"/>
+        <mkdir dir="build/locale/de/"/>
+    </target>
+    
+    <target name="gettext-init" depends="init" description="create a pot file with base strings">
+        <exec executable="${cmd.itstool}">
+        	<arg value="--output=build/locale/ebu_ContentGenreCS.pot"/>
+        	<arg value="cs/ebu_ContentGenreCS.xml"/>
+        </exec>
+    </target>
+    
+    <target name="gettext-update" depends="gettext-init" description="update mo files from xml">
+        <exec executable="${cmd.msgmerge}">
+            <arg value="--update"/>
+            <arg value="locale/de/cs/ebu_ContentGenreCS.po"/>
+            <arg value="build/locale/ebu_ContentGenreCS.pot"/>
+        </exec>
+    </target>
+    
+    <target name="gettext-compile" depends="init" description="build translated files in build">
+        <exec executable="${cmd.msgfmt}">
+            <arg value="locale/de/cs/ebu_ContentGenreCS.po"/>
+            <arg value="--output-file=build/locale/de/ebu_ContentGenreCS.mo"/>
+        </exec>
+        <exec executable="${cmd.itstool}">
+            <arg value="--merge=build/locale/de/ebu_ContentGenreCS.mo"/>
+            <arg value="cs/ebu_ContentGenreCS.xml"/>
+            <arg value="--output=build/locale/de/ebu_ContentGenreCS.xml"/>
+        </exec>
+    </target>
+</project>
